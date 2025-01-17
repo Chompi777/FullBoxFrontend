@@ -1,11 +1,16 @@
-// app/form/AgregarBultos.tsx
-"use client";
 
-import { useState } from "react";
+"use client";
+import React, { useState } from "react";
 
 export default function AgregarBultos() {
   const [bultos, setBultos] = useState([]);
-  const [bulto, setBulto] = useState({ largo: "", alto: "", ancho: "", peso: "", contenido: "" });
+  const [bulto, setBulto] = useState({
+    largo: "",
+    alto: "",
+    ancho: "",
+    peso: "",
+    contenido: "",
+  });
 
   const handleAddBulto = () => {
     setBultos([...bultos, bulto]);
@@ -15,7 +20,7 @@ export default function AgregarBultos() {
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       <div className="max-w-3xl mx-auto bg-white shadow-md rounded-lg p-6">
-        <h1 className="text-2xl font-bold mb-4 text-gray-800">Agrega tus bultos</h1>
+        <h1 className="text-3xl font-bold text-center text-gray-800 mb-4">Agrega tus bultos</h1>
         <div className="grid grid-cols-4 gap-4 mb-4">
           <input
             type="number"
