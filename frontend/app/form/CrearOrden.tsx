@@ -6,16 +6,17 @@ export default function CrearOrden() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    direccion: "",
+    direccionRecoleccion: "",
     nombres: "",
     apellidos: "",
     telefono: "",
     email: "",
-    destinatario: "",
+    direccionDestinatario: "",
     departamento: "",
     municipio: "",
     referencia: "",
     indicaciones: "",
+    fechaProgramada: "",
   });
 
   const handleChange = (e) => {
@@ -39,19 +40,36 @@ export default function CrearOrden() {
           </p>
         </div>
         <form className="space-y-6">
+          {/* Dirección de recolección */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Dirección de recolección
             </label>
             <input
               type="text"
-              name="direccion"
-              value={formData.direccion}
+              name="direccionRecoleccion"
+              value={formData.direccionRecoleccion}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md p-3 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="input-styled"
               placeholder="Ej. Colonia Las Magnolias..."
             />
           </div>
+
+          {/* Fecha programada */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Fecha Programada
+            </label>
+            <input
+              type="date"
+              name="fechaProgramada"
+              value={formData.fechaProgramada}
+              onChange={handleChange}
+              className="input-styled"
+            />
+          </div>
+
+          {/* Nombres y Apellidos */}
           <div className="grid grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -62,7 +80,7 @@ export default function CrearOrden() {
                 name="nombres"
                 value={formData.nombres}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-md p-3 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="input-styled"
                 placeholder="Gabriela"
               />
             </div>
@@ -75,11 +93,13 @@ export default function CrearOrden() {
                 name="apellidos"
                 value={formData.apellidos}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-md p-3 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="input-styled"
                 placeholder="Díaz López"
               />
             </div>
           </div>
+
+          {/* Teléfono y Email */}
           <div className="grid grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -90,7 +110,7 @@ export default function CrearOrden() {
                 name="telefono"
                 value={formData.telefono}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-md p-3 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="input-styled"
                 placeholder="+503 6962 8383"
               />
             </div>
@@ -103,11 +123,28 @@ export default function CrearOrden() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-md p-3 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="input-styled"
                 placeholder="example@email.com"
               />
             </div>
           </div>
+
+          {/* Dirección del destinatario */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Dirección del destinatario
+            </label>
+            <input
+              type="text"
+              name="direccionDestinatario"
+              value={formData.direccionDestinatario}
+              onChange={handleChange}
+              className="input-styled"
+              placeholder="Ej. Final 49 Av. Sur y Bulevar Los Próceres..."
+            />
+          </div>
+
+          {/* Departamento y Municipio */}
           <div className="grid grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -118,7 +155,7 @@ export default function CrearOrden() {
                 name="departamento"
                 value={formData.departamento}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-md p-3 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="input-styled"
                 placeholder="San Salvador"
               />
             </div>
@@ -131,11 +168,13 @@ export default function CrearOrden() {
                 name="municipio"
                 value={formData.municipio}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-md p-3 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="input-styled"
                 placeholder="San Salvador"
               />
             </div>
           </div>
+
+          {/* Punto de referencia */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Punto de Referencia
@@ -145,10 +184,12 @@ export default function CrearOrden() {
               name="referencia"
               value={formData.referencia}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md p-3 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="input-styled"
               placeholder="Ej. Cerca del redondel Árbol de la Paz"
             />
           </div>
+
+          {/* Indicaciones */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Indicaciones
@@ -157,11 +198,13 @@ export default function CrearOrden() {
               name="indicaciones"
               value={formData.indicaciones}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-md p-3 shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="input-styled"
               placeholder="Ej. Llamar antes de entregar."
               rows={3}
             ></textarea>
           </div>
+
+          {/* Botón */}
           <button
             type="button"
             onClick={handleNext}
