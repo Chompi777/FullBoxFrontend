@@ -26,6 +26,7 @@ body {
   border-radius: 0.375rem; /* Borde redondeado */
   padding: 0.75rem; /* Espaciado interno */
   background-color: white;
+  color: #171717; /* Asegura un texto negro oscuro visible */
   transition: all 0.3s ease; /* Transiciones suaves */
 }
 
@@ -34,8 +35,24 @@ body {
   border-color: #3b82f6; /* Azul */
   box-shadow: 0 0 6px #3b82f6; /* Resalta con sombra azul */
   background-color: #f0f9ff; /* Fondo azul claro */
+  color: #171717; /* Asegura texto visible también al enfocarlo */
 }
 
 .input-styled:hover {
   border-color: #2563eb; /* Azul más oscuro */
+}
+
+.input-styled::placeholder {
+  color: #9ca3af; /* Placeholder gris medio */
+  opacity: 1; /* Asegura que el placeholder sea visible */
+}
+
+.input-styled:focus::placeholder {
+  color: #6b7280; /* Placeholder gris más tenue al enfocar */
+}
+
+/* Estilo para el botón de eliminar */
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
