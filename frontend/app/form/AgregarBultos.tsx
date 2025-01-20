@@ -12,6 +12,10 @@ export default function AgregarBultos() {
   });
 
   const handleAddBulto = () => {
+    if (!bulto.largo || !bulto.alto || !bulto.ancho || !bulto.peso || !bulto.contenido) {
+      alert("Por favor, llena todos los campos antes de agregar un bulto.");
+      return;
+    }
     setBultos([...bultos, bulto]);
     setBulto({ largo: "", alto: "", ancho: "", peso: "", contenido: "" });
   };
@@ -30,7 +34,7 @@ export default function AgregarBultos() {
               placeholder="Ej: 50"
               value={bulto.largo}
               onChange={(e) => setBulto({ ...bulto, largo: e.target.value })}
-              className="p-2 border rounded-lg focus:ring focus:ring-blue-200"
+              className="input-styled p-2 border rounded-lg focus:ring focus:ring-blue-200"
             />
           </div>
           <div className="flex flex-col">
@@ -40,7 +44,7 @@ export default function AgregarBultos() {
               placeholder="Ej: 30"
               value={bulto.alto}
               onChange={(e) => setBulto({ ...bulto, alto: e.target.value })}
-              className="p-2 border rounded-lg focus:ring focus:ring-blue-200"
+              className="input-styled p-2 border rounded-lg focus:ring focus:ring-blue-200"
             />
           </div>
           <div className="flex flex-col">
@@ -50,7 +54,7 @@ export default function AgregarBultos() {
               placeholder="Ej: 20"
               value={bulto.ancho}
               onChange={(e) => setBulto({ ...bulto, ancho: e.target.value })}
-              className="p-2 border rounded-lg focus:ring focus:ring-blue-200"
+              className="input-styled p-2 border rounded-lg focus:ring focus:ring-blue-200"
             />
           </div>
           <div className="flex flex-col">
@@ -60,7 +64,7 @@ export default function AgregarBultos() {
               placeholder="Ej: 10"
               value={bulto.peso}
               onChange={(e) => setBulto({ ...bulto, peso: e.target.value })}
-              className="p-2 border rounded-lg focus:ring focus:ring-blue-200"
+              className="input-styled p-2 border rounded-lg focus:ring focus:ring-blue-200"
             />
           </div>
           <div className="flex flex-col md:col-span-4">
@@ -70,7 +74,7 @@ export default function AgregarBultos() {
               placeholder="Ej: Ropa, Libros..."
               value={bulto.contenido}
               onChange={(e) => setBulto({ ...bulto, contenido: e.target.value })}
-              className="p-2 border rounded-lg focus:ring focus:ring-blue-200"
+              className="input-styled p-2 border rounded-lg focus:ring focus:ring-blue-200"
             />
           </div>
         </div>
@@ -90,12 +94,21 @@ export default function AgregarBultos() {
                 <p className="text-sm font-medium text-gray-700">{b.contenido}</p>
                 <p className="text-xs text-gray-500">{`${b.peso} lb - ${b.largo}x${b.ancho}x${b.alto} cm`}</p>
               </div>
+              <button
+                className="text-red-600 hover:text-red-800"
+                onClick={() => setBultos(bultos.filter((_, i) => i !== index))}
+              >
+                Eliminar
+              </button>
             </li>
           ))}
         </ul>
         {bultos.length > 0 && (
-          <button className="w-full bg-green-600 text-white p-3 rounded-lg font-medium mt-6 hover:bg-green-700 transition">
-            Enviar Bultos
+          <button
+            className="w-full bg-green-600 text-white p-3 rounded-lg font-medium hover:bg-green-700 transition mt-4"
+            onClick={() => alert("Bultos enviados exitosamente")}
+          >
+            Confirmar Bultos
           </button>
         )}
       </div>
