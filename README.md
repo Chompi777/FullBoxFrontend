@@ -1,53 +1,57 @@
 # Fullbox Frontend
 
-Este es el proyecto **frontend** de **Fullbox**, diseñado para gestionar órdenes y bultos de manera eficiente. El proyecto está desarrollado con **React** y utiliza **React Router** para la navegación, junto con **TailwindCSS** para un diseño moderno y responsivo.
+Este es el proyecto **frontend** de **Fullbox**, diseñado para gestionar órdenes y bultos de manera eficiente. Está desarrollado con **React** y utiliza tecnologías modernas como **TailwindCSS** y **Vite** para ofrecer una experiencia rápida y responsiva.
 
 ---
 
-## Tabla de contenidos
+## Tabla de Contenidos
+
 1. [Características](#características)
-2. [Tecnologías utilizadas](#tecnologías-utilizadas)
-3. [Requisitos previos](#requisitos-previos)
-4. [Instalación](#instalación)
-5. [Estructura del proyecto](#estructura-del-proyecto)
-6. [Comandos útiles](#comandos-útiles)
-7. [Guía de desarrollo](#guía-de-desarrollo)
-8. [Despliegue](#despliegue)
+2. [Tecnologías Utilizadas](#tecnologías-utilizadas)
+3. [Requisitos Previos](#requisitos-previos)
+4. [Instalación y Configuración](#instalación-y-configuración)
+5. [Comandos Útiles](#comandos-útiles)
+6. [Guía de Desarrollo](#guía-de-desarrollo)
+7. [Solución de Problemas](#solución-de-problemas)
+8. [Despliegue en Producción](#despliegue-en-producción)
 9. [Contribución](#contribución)
 10. [Contacto](#contacto)
 
 ---
 
 ## Características
-- Navegación fluida y SPA (Single Page Application) con React Router.
-- Módulos para la creación de órdenes y bultos.
-- Integración con el backend de Fullbox mediante una API.
-- Diseño responsivo para dispositivos móviles, tabletas y escritorios.
-- Configuración modular y escalable.
+
+- **Interfaz moderna y responsiva** con TailwindCSS.
+- **Manejo de rutas SPA (Single Page Application)** con React Router.
+- Componentes modulares para reutilización de código.
+- **Soporte para autenticación** (rutas de Login y Register integradas).
+- Fácil integración con el backend mediante llamadas a API REST.
 
 ---
 
-## Tecnologías utilizadas
-- **React**: Biblioteca principal para la construcción de la interfaz de usuario.
-- **React Router**: Manejo de rutas y navegación.
-- **TailwindCSS**: Framework CSS para estilos responsivos y modernos.
+## Tecnologías Utilizadas
+
+- **React**: Biblioteca para construir interfaces de usuario.
+- **React Router**: Manejo de rutas dinámicas.
+- **TailwindCSS**: Framework de estilos responsivo y configurable.
 - **Vite**: Herramienta de desarrollo y construcción rápida.
-- **Node.js** y **npm**: Herramientas para el manejo del entorno y dependencias.
+- **Node.js**: Entorno de ejecución para manejar dependencias.
 
 ---
 
-## Requisitos previos
-Antes de empezar, asegúrate de tener instalados los siguientes componentes:
-- **Node.js** (versión 18 o superior)  
-  [Descargar Node.js](https://nodejs.org/)
-- **npm** (incluido con Node.js)
-- **Git** (para clonar el repositorio)  
-  [Descargar Git](https://git-scm.com/)
+## Requisitos Previos
+
+Antes de comenzar, asegúrate de tener instalado lo siguiente:
+
+- **Node.js** (versión 18 o superior): [Descargar Node.js](https://nodejs.org/)
+- **npm** (incluido con Node.js).
+- **Git** (para clonar el repositorio): [Descargar Git](https://git-scm.com/).
 
 ---
 
-## Instalación
+## Instalación y Configuración
 
 ### 1. Clona el repositorio
+
 ```bash
-git clone https://github.com/TU-USUARIO/TU-REPOSITORIO.git
+git clone https://github.com/Chompi777/FullBoxFrontend.git
